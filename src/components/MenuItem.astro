@@ -1,9 +1,41 @@
 ---
 export interface Props {
-  label: string,
-  href: string,
+  href?: string;
+  variant?: string;
+  classExtra?: string;
 }
 
-const { label, href } = Astro.props as Props;
+const {href = '#', variant = 'default', classExtra } = Astro.props as Props;
+const anchorClass = `
+  px-6
+  focus:outline-none
+  focus-visible:ring-4
+  ring-neutral-900
+  ring-offset-4
+  ring-offset-amber-400
+`;
+const variants: {[key:string]: string} = {
+  'default': `
+    py-1
+    rounded-sm
+    text-neutral-900
+    transition-colors
+    dark:text-neutral-900
+    hover:text-neutral-600
+  `,
+  'highlight': `
+    py-2
+    rounded-md
+    bg-teal-900
+    text-white
+    shadow-xl
+    transition-shadow
+    hover:text-teal-100
+    hover:shadow-none
+  `,
+};
+const linkClass = `${anchorClass} ${variants[variant] || variants['default']} ${classExtra}`;
 ---
-<a href={href} class="hover:text-darkGrayishBlue">{label}</a>
+<a href={href} class={linkClass} role="menuitem">
+  <slot />
+</a>
