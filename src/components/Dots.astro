@@ -1,0 +1,26 @@
+---
+export interface Props {
+  variant: string
+}
+
+const { variant } = Astro.props as Props;
+
+const baseClass = `
+  hidden
+  lg:block
+  absolute
+  top-1/2
+  -translate-y-1/2
+`;
+
+const variants: {[key: string]: string} = {
+  left: '-left-24 xl:-left-7',
+  right: '-right-24 xl:-right-7'
+};
+
+const imageClass = `${baseClass} ${variants[variant]}`;
+
+---
+<img src="/src/assets/dots.svg" alt="dots" aria-hidden="true"
+  class={imageClass}
+>

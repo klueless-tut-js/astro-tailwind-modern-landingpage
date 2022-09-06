@@ -1,0 +1,36 @@
+---
+import Quality from './Quality.astro'
+import Dots from './Dots.astro'
+---
+
+<section aria-label="qualities" class="relative">
+  <h2 id="qualities" class="sr-only">Our Qualities</h2>
+
+  <Dots variant='left' />
+  <Dots variant='right' />3
+
+  <div class="
+    container
+    mx-auto
+    max-w-5xl
+    flex
+    flex-wrap
+    gap-12
+    items-start 
+    justify-center
+    md:justify-between
+    ">
+    
+    <Quality title='Safe' icon='icon-lock'>
+      <p>Our products are secure and private out-of-the-box</p>
+    </Quality>
+
+    <Quality title='Efficient' icon='icon-lightning'>
+      <p>Feel good about your wallet and the environment</p>
+    </Quality>
+
+    <Quality title='Proven' icon='icon-tick'>
+      <p>Leading the Smart Home world for 10 years</p>
+    </Quality>
+  </div>
+</section>
