@@ -1,4 +1,6 @@
 ---
+import dotsImage from '../assets/dots.png';
+
 export interface Props {
   variant: string
 }
@@ -21,6 +23,4 @@ const variants: {[key: string]: string} = {
 const imageClass = `${baseClass} ${variants[variant]}`;
 
 ---
-<img src="/src/assets/dots.svg" alt="dots" aria-hidden="true"
-  class={imageClass}
->
+<img src={dotsImage} alt="dots" aria-hidden="true" class={imageClass}>
