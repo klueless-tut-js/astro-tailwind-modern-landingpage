@@ -10,7 +10,7 @@ const { icon, title } = Astro.props as Props;
 ---
 <div class="grid gap-4 justify-items-center text-center md:flex-1">
   <div class="rounded-full border-8 border-amber-400 p-4">
-    <Svg name={icon} />
+    <Svg class='h-14 w-14' icon={icon} />
   </div>
   <h3 class='text-3xl font-bold'>{title}</h3>
   <slot />
