@@ -1,5 +1,8 @@
 # Astro Starter Kit: Minimal
 
+[Site](https://precious-chaja-2fb42d.netlify.app/)
+[Tube](https://www.youtube.com/watch?v=xpGNcQDmV2A)
+
 ```
 npm init astro -- --template minimal
 ```
